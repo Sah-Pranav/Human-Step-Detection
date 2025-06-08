@@ -1,0 +1,63 @@
+# 📖 Description
+
+In this problem, our task is to **predict the start and end of human steps from a set of 6 signals**.  
+The data was recorded using **accelerometer** and **gyroscope** sensors, which were held in the hand during 4 different activities:
+- simple walking
+- walking upstairs
+- walking downstairs
+- standing still
+
+---
+
+## 📦 Training Data
+
+The training data consists of folders, each containing the following files:
+
+- A `xxxx.csv` file with **seven columns**:
+  - one for **activity id**
+  - three (x, y, z) for **accelerometer data**
+  - three (x, y, z) for **gyroscope data**
+
+- A `xxxx.csv.stepMixed` file with **step labels** (containing start and end indexes for each complete step)
+
+**Note:**  
+There might be multiple of these files within a folder — these are **chunks of the measured signals**. You should use all of these files for training.
+
+---
+
+## 📊 Testing Data
+
+For testing, you are provided with a `testData.csv` file which has the **same structure as the training input `xxxx.csv`**, but **without the activity column**.
+
+Your goal is to produce an output file, which for each time point in the signal gives:
+- the probability of a **start of a step**
+- the probability of an **end of a step**
+
+For example: 15, 0.7, 0.5
+
+Means:  
+At time point 15, there’s a 70% chance it's the **start** of a step and a 50% chance it's the **end** of a step.  
+Alternatively, you can also submit **binary class labels (0 and 1)** instead of probabilities.
+
+---
+
+
+---
+
+## 📄 Submission Format
+
+The expected output CSV format:
+index,start,end
+0,1,0
+1,1,1
+2,1,1
+3,1,1
+4,1,1
+5,1,1
+6,0,1
+7,0,0
+8,0,0
+9,0,0
+...
+102090,0,1
+
