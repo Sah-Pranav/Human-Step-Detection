@@ -20,7 +20,7 @@ The project consists of the following components:
     - Evaluation and result saving  
 
 - 📄 **Dataset**
-  - `./data/` — Folder containing:
+  - `data.zip` — Folder containing:
     - Training and test CSV files  
     - Step labels  
     - Cleaned data for model input  
